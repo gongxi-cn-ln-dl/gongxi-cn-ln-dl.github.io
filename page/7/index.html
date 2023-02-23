@@ -293,90 +293,29 @@ mjx-container[display="true"] + br {
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2021/12/12/%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%80%BB%E7%BB%93%EF%BC%8821.12.11%EF%BC%89/">
-                        模拟赛总结（21.12.11）
+                    <a href="/2022/02/11/%E6%9C%80%E7%9F%AD%E8%B7%AF%E7%AE%97%E6%B3%95/">
+                        最短路算法
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        
-错题
-T5 军事机密(secret) 
+                        多源最短路Floyd
+适用范围：无负权回路即可，边权可正可负，运行一次算法即可求得任意两点间最短路。
 
-【问题描述】 军方截获的信息由 n（n&lt;=30000）个数字组成，因为是敌国的高端秘密，所以一时不能破获。最原始的想法就是对这 n 个数进行从小到大排序，每个数都对应一个序号，然后对第 i 个是什么数...
+用表示只考虑前个点，到的最短路
+枚举作为中转点
+从点到点，可以直接到达，也可以选择通过点中转后到达
+如果通过点中转后，从到的距离缩短，那么就将更新...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Sun Dec 12 2021 13:02:00 GMT+0800">
+            <span class="home-article-date" data-date="Fri Feb 11 2022 22:45:00 GMT+0800">
                 
-                    2021-12-12
-                
-            </span>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E6%80%BB%E7%BB%93/">总结</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/%E6%A8%A1%E6%8B%9F%E8%B5%9B/">模拟赛</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/%E6%95%B0%E5%AD%A6/">数学</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2021/12/12/%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%80%BB%E7%BB%93%EF%BC%8821.12.11%EF%BC%89/">Read more<span class="seo-reader-text">模拟赛总结（21.12.11）</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2021/12/05/%E5%85%A8%E6%8E%92%E5%88%97/">
-                        全排列
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        
-因为全排列好像一直都没太明白（虽然可以用next_permutation）正好作业里有就顺便记录一下
-
-引入
-我们都知道，如果是固定个数个全排列，比如1,2,3的全排列，我个人认为最简单的方法是
-123456789int n = 3;for(int...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Sun Dec 05 2021 14:08:00 GMT+0800">
-                
-                    2021-12-05
+                    2022-02-11
                 
             </span>
         </span>
@@ -391,70 +330,14 @@ T5 军事机密(secret)
                             <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>&nbsp;
                         </li>
                     
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2021/12/05/%E5%85%A8%E6%8E%92%E5%88%97/">Read more<span class="seo-reader-text">全排列</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2021/12/02/%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%80%BB%E7%BB%93%EF%BC%8821.12.02%EF%BC%89/">
-                        模拟赛总结（21.12.02）
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        
-我先放两张图在这里（）
-
-
-
-
-总结
-这是人生中第一次模拟赛，还是有一些地方不太细心，比如说
-《因为打错文件名而痛失100分这件事》
-            
-
-然后因为时间有限只有二十分钟导致三道题只能取舍着做（还是我菜
-
-第一题计算系数，看了两...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Thu Dec 02 2021 23:56:00 GMT+0800">
-                
-                    2021-12-02
-                
-            </span>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
                         <li>
-                            
-                            <a href="/tags/%E6%80%BB%E7%BB%93/">总结</a>&nbsp;
+                            | 
+                            <a href="/tags/%E5%9B%BE%E8%AE%BA/">图论</a>&nbsp;
                         </li>
                     
                         <li>
                             | 
-                            <a href="/tags/%E6%A8%A1%E6%8B%9F%E8%B5%9B/">模拟赛</a>&nbsp;
+                            <a href="/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/">最短路</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -462,7 +345,7 @@ T5 军事机密(secret)
         
     </div>
 
-    <a href="/2021/12/02/%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%80%BB%E7%BB%93%EF%BC%8821.12.02%EF%BC%89/">Read more<span class="seo-reader-text">模拟赛总结（21.12.02）</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2022/02/11/%E6%9C%80%E7%9F%AD%E8%B7%AF%E7%AE%97%E6%B3%95/">Read more<span class="seo-reader-text">最短路算法</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -474,39 +357,58 @@ T5 军事机密(secret)
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2021/11/29/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%EF%BC%88%E5%8A%A0%E5%BC%BA%E7%89%88/">
-                        斐波那契数列（加强版
+                    <a href="/2022/02/10/%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97%EF%BC%88LIS%EF%BC%89/">
+                        最长上升子序列（LIS）
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
                         
-这题（指P1255 ）卡得我挺难受的（指WA，TLE，MLE都出来了）
 
-题目很简单就是个斐波那契数列
+给定长度为的序列，求序列中一个长度最长且递增的子序列。输出子序列的长度。。
 
-重点是数据范围这真的不会累死人吗
 
-这么大的数据自然该想到用高精度
-以及不能用递归（因为存在大量重复运算，的时间复杂度可不是闹着玩的）要用递推...
+
+解法
+设为以结尾的最长上升子序列的长度
+易知的最大值为 区间中的 小于的最大的加上1
+意思就是，
+假设为区间中小于的最大值，那么就可以拼在的后面，这时以结尾的LIS...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Mon Nov 29 2021 12:10:00 GMT+0800">
+            <span class="home-article-date" data-date="Thu Feb 10 2022 22:52:00 GMT+0800">
                 
-                    2021-11-29
+                    2022-02-10
                 
             </span>
         </span>
         
         
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
     </div>
 
-    <a href="/2021/11/29/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%EF%BC%88%E5%8A%A0%E5%BC%BA%E7%89%88/">Read more<span class="seo-reader-text">斐波那契数列（加强版</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2022/02/10/%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97%EF%BC%88LIS%EF%BC%89/">Read more<span class="seo-reader-text">最长上升子序列（LIS）</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -518,26 +420,207 @@ T5 军事机密(secret)
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2021/11/28/%E9%98%B6%E6%AE%B5%E6%80%A7%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89/">
-                        阶段性总结（一）
+                    <a href="/2022/02/09/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/">
+                        背包问题
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        我才不会说是钢哥让我们写的呢（？
-回看走过的路
-从竞赛课的试听到现在，对于我还是主要在复习巩固，可喜可贺的是我成功地在一个晚上顺利地从cin、cout过渡到了scanf与printf，适应力还是很强的嘛（
-但是不可喜不可贺的就是，虽然我这两三个月都在...
+                        0/1背包
+最基础的背包问题
+
+
+有件物品和一个容量为的背包。第件物品的重量是，价值是。求解将哪些物品装入背包可在总重量不超过的前提下使价值总和最大。
+
+
+表示前件物品，背包容量为时最大价值
+那么就需要考虑第件物品装/不装
+
+第件物品无法装进背包：，...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Sun Nov 28 2021 21:10:00 GMT+0800">
+            <span class="home-article-date" data-date="Wed Feb 09 2022 23:21:00 GMT+0800">
                 
-                    2021-11-28
+                    2022-02-09
+                
+            </span>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/%E8%83%8C%E5%8C%85/">背包</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2022/02/09/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/">Read more<span class="seo-reader-text">背包问题</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2022/01/30/%E6%97%A0%E9%99%90%E5%BA%8F%E5%88%97/">
+                        无限序列
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        YbtOj G. 3.无限序列 
+
+题目描述我们按以下方式产生序列：
+
+开始时序列是：1 ；
+每一次变化把序列中的 1 变成 10 ，0 变成 1。
+
+经过无限次变化，我们得到序列 1011010110110101101... 。
+总共有个询问，每次...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Sun Jan 30 2022 19:02:00 GMT+0800">
+                
+                    2022-01-30
+                
+            </span>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E9%A2%98%E8%A7%A3/">题解</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2022/01/30/%E6%97%A0%E9%99%90%E5%BA%8F%E5%88%97/">Read more<span class="seo-reader-text">无限序列</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2022/01/30/%E6%95%B0%E7%9A%84%E5%88%92%E5%88%86&amp;%E4%BC%A0%E7%90%83%E6%B8%B8%E6%88%8F/">
+                        数的划分&amp;amp;传球游戏
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        数的划分&amp;传球游戏数的划分洛谷 P1025 数的划分 
+一直以为是用第二类斯特林数
+然后发现样例都过不了
+然后反复对比第二类斯特林数的应用条件和题干
+终于发现，第二类斯特林数的递推式的使用条件是“不同的球”，
+而在这题和洛谷P2386 放苹果...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Sun Jan 30 2022 18:06:00 GMT+0800">
+                
+                    2022-01-30
+                
+            </span>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E9%A2%98%E8%A7%A3/">题解</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2022/01/30/%E6%95%B0%E7%9A%84%E5%88%92%E5%88%86&amp;%E4%BC%A0%E7%90%83%E6%B8%B8%E6%88%8F/">Read more<span class="seo-reader-text">数的划分&amp;amp;传球游戏</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2022/01/28/220128%E6%80%BB%E7%BB%93/">
+                        220128总结
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        被卡深搜的一天
+
+面积（Area）
+昨天原题直接复制（
+
+营救（Save）
+
+【问题描述】铁塔尼号遇险了！他发出了求救信号。距离最近的哥伦比亚号收到了讯息，时间就是生命，必须尽快赶到那里。通过侦测，哥伦比亚号获取了一张海洋图。这张图将海洋部分分化成 ...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Fri Jan 28 2022 16:01:00 GMT+0800">
+                
+                    2022-01-28
                 
             </span>
         </span>
@@ -557,7 +640,228 @@ T5 军事机密(secret)
         
     </div>
 
-    <a href="/2021/11/28/%E9%98%B6%E6%AE%B5%E6%80%A7%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89/">Read more<span class="seo-reader-text">阶段性总结（一）</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2022/01/28/220128%E6%80%BB%E7%BB%93/">Read more<span class="seo-reader-text">220128总结</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2022/01/27/220127%E6%80%BB%E7%BB%93/">
+                        220127总结
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        
+又是上来就打模拟赛的一天
+
+题解
+不知道什么题目（Area）
+
+【题目描述】编程计算由”*“号围成的下列图形的面积。面积计算方法是统计*号所围成的闭合曲线中水平线和垂直线交点的数目。如下图所示，在10*10的二位数组中，有“*”围住了15个点，因此...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Thu Jan 27 2022 13:14:00 GMT+0800">
+                
+                    2022-01-27
+                
+            </span>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E6%80%BB%E7%BB%93/">总结</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2022/01/27/220127%E6%80%BB%E7%BB%93/">Read more<span class="seo-reader-text">220127总结</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2022/01/26/220126%E6%80%BB%E7%BB%93/">
+                        220126总结
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        所以今天怎么上来就模拟赛
+今日运势
+
+然而我AK乐
+然而今天是RE的一天（
+模拟赛
+今天的OIer：人生苦短，我用python（逃
+
+一共交了26次，其中T3交了13次模拟赛的描述是“准确率”
+
+
+
+表达式括号匹配（stack）
+之前做过，本来想抢个...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Wed Jan 26 2022 16:10:00 GMT+0800">
+                
+                    2022-01-26
+                
+            </span>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E6%80%BB%E7%BB%93/">总结</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2022/01/26/220126%E6%80%BB%E7%BB%93/">Read more<span class="seo-reader-text">220126总结</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2022/01/25/220125%E6%80%BB%E7%BB%93/">
+                        220125总结
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        上午的模拟赛题解
+迷宫问题（依然没找到原题
+
+【问题描述】
+设有一个$NN(2\leqslant N \lt10)$方格的迷宫，人口和出口分别在左上角和*右上角。迷宫格子中分别放0和1，0表示可通，1表示不能，入口和出口处保证为0.迷宫走的规则如下所...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Tue Jan 25 2022 15:48:00 GMT+0800">
+                
+                    2022-01-25
+                
+            </span>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E6%80%BB%E7%BB%93/">总结</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2022/01/25/220125%E6%80%BB%E7%BB%93/">Read more<span class="seo-reader-text">220125总结</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2022/01/24/220124%E6%80%BB%E7%BB%93/">
+                        220124总结
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        上午上午好像就做了点题
+
+讲个笑话，一次AC（其实一共交了35次
+
+子集和问题（提交21次
+
+【问题描述】　　子集和问题的一个实例为〈S,t〉。其中，S={ x1， x2，…， xn}是一个正整数的集合，c是一个正整数。子集和问题判定是否存在S的一个...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Mon Jan 24 2022 15:37:00 GMT+0800">
+                
+                    2022-01-24
+                
+            </span>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E6%80%BB%E7%BB%93/">总结</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2022/01/24/220124%E6%80%BB%E7%BB%93/">Read more<span class="seo-reader-text">220124总结</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -572,6 +876,10 @@ T5 军事机密(secret)
         >Prev</a>
     
 
+    
+        <a class="next btn"
+           href="/page/8/"
+        >Next</a>
     
 </div>
 
