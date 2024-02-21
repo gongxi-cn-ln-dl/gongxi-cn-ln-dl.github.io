@@ -1,0 +1,1519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="Burnling">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://example.com/archives/2021/11/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/archives/2021/11/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="https://tuchuang01-burnling.oss-cn-hangzhou.aliyuncs.com/ImgForBlog/UmyHead.png" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://tuchuang01-burnling.oss-cn-hangzhou.aliyuncs.com/ImgForBlog/UmyHead.png">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="https://tuchuang01-burnling.oss-cn-hangzhou.aliyuncs.com/ImgForBlog/UmyHead.png">
+    <!--- Page Info-->
+    
+    <title>
+        
+            Archive: 2021/11 -
+        
+        Burnling&#39;s Blog
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+        <style>
+    :root {
+        --preloader-background-color: #fff;
+        --preloader-text-color: #000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --preloader-background-color: #202124;
+            --preloader-text-color: #fff;
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        :root {
+            --preloader-background-color: #fff;
+            --preloader-text-color: #000;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .ml13 {
+            font-size: 2.6rem !important; /* Adjust this value as needed */
+        }
+    }
+
+    .preloader {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Tailwind 'gap-4' is 1rem */
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        padding: 12px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh; /* 'h-screen' is 100% of the viewport height */
+        background-color: var(--preloader-background-color);
+        z-index: 1100; /* 'z-[1100]' sets the z-index */
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    .ml13 {
+        font-size: 3.2rem;
+        /* text-transform: uppercase; */
+        color: var(--preloader-text-color);
+        letter-spacing: -1px;
+        font-weight: 500;
+        font-family: 'Chillax-Variable', sans-serif;
+        text-align: center;
+    }
+
+    .ml13 .word {
+        display: inline-flex;
+        flex-wrap: wrap;
+        white-space: nowrap;
+    }
+
+    .ml13 .letter {
+        display: inline-block;
+        line-height: 1em;
+    }
+</style>
+
+<div class="preloader">
+    
+<script src="/js/libs/anime.min.js"></script>
+
+    <h1 class="ml13">
+        Burnling&#39;s Blog
+    </h1>
+    <script>
+        var textWrapper = document.querySelector('.ml13');
+        // Split text into words
+        var words = textWrapper.textContent.trim().split(' ');
+
+        // Clear the existing content
+        textWrapper.innerHTML = '';
+
+        // Wrap each word and its letters in spans
+        words.forEach(function(word) {
+            var wordSpan = document.createElement('span');
+            wordSpan.classList.add('word');
+            wordSpan.innerHTML = word.replace(/\S/g, "<span class='letter'>$&</span>");
+            textWrapper.appendChild(wordSpan);
+            textWrapper.appendChild(document.createTextNode(' ')); // Add space between words
+        });
+
+
+        anime.timeline({loop: true})
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [100,0],
+                translateZ: 0,
+                opacity: [0,1],
+                easing: "easeOutExpo",
+                duration: 1400,
+                delay: (el, i) => 300 + 30 * i
+            }).add({
+            targets: '.ml13 .letter',
+            translateY: [0,-100],
+            opacity: [1,0],
+            easing: "easeInExpo",
+            duration: 1200,
+            delay: (el, i) => 100 + 30 * i
+        });
+
+        let themeStatus = JSON.parse(localStorage.getItem('REDEFINE-THEME-STATUS'))?.isDark;
+
+        // If the theme status is not found in local storage, check the preferred color scheme
+        if (themeStatus === undefined || themeStatus === null) {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                themeStatus = 'dark';
+            } else {
+                themeStatus = 'light';
+            }
+        }
+
+        // Now you can use the themeStatus variable in your code
+        if (themeStatus) {
+            document.documentElement.style.setProperty('--preloader-background-color', '#202124');
+            document.documentElement.style.setProperty('--preloader-text-color', '#fff');
+        } else {
+            document.documentElement.style.setProperty('--preloader-background-color', '#fff');
+            document.documentElement.style.setProperty('--preloader-text-color', '#000');
+        }
+
+        window.addEventListener('load', function () {
+            hidePreloaderAfterTimeout(1000); // Hide after 1000 milliseconds once the window has loaded
+        });
+
+        // Backup failsafe: Hide preloader after a maximum of 5000 milliseconds, regardless of the window load event
+        hidePreloaderAfterTimeout(5000);
+
+        function hidePreloaderAfterTimeout(delay) {
+            setTimeout(function () {
+                var preloader = document.querySelector('.preloader');
+                preloader.style.opacity = '0';
+                setTimeout(function () {
+                    preloader.style.display = 'none';
+                }, 200);
+            }, delay);
+        }
+    </script>
+</div>
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/assets/build/styles.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/fonts.css">
+
+    
+<link rel="stylesheet" href="/fonts/Satoshi/satoshi.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"example.com","root":"/","language":"en"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left","headings_top_spacing":{"h1":"5rem","h2":"4rem","h3":"2.8rem","h4":"2.5rem","h5":"2.2rem","h6":"2rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"simple","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"https://s3.bmp.ovh/imgs/2023/03/22/befa4e792cace4d6.jpg","dark":"https://s3.bmp.ovh/imgs/2024/02/21/7f79f70dffa8680a.png"},"title":"Welcome to Burnling's Blog","subtitle":{"text":[],"hitokoto":{"enable":true,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#173b71","dark":"#532727"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.6.1","navbar":{"auto_hide":false,"color":{"left":"#0093E9","right":"#80D0C7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"tags":{"icon":"fa-solid fa-tags","path":"/tags/"}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":null},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+<!--        <span class="swup-progress-icon">-->
+<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+<!--        </span>-->
+    
+</div>
+
+
+<main class="page-container" id="swup">
+
+    
+
+    <div class="main-content-container">
+
+
+        <div class="main-content-header">
+            <header class="navbar-container px-6 md:px-12">
+
+    <div class="navbar-content ">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                Burnling&#39;s Blog
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    HOME
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/tags/"
+                                        >
+                                    <i class="fa-solid fa-tags fa-fw"></i>
+                                    TAGS
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-screen w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                HOME
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/tags/"
+                        >
+                            <span>
+                                TAGS
+                            </span>
+                            
+                                <i class="fa-solid fa-tags fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+
+            
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">25</div>
+        <div class="label text-third-text-color text-sm">Tags</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">0</div>
+        <div class="label text-third-text-color text-sm">Categories</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">87</div>
+        <div class="label text-third-text-color text-sm">Posts</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="archive-container shadow-none hover:shadow-none sm:shadow-redefine sm:hover:shadow-redefine-hover">
+    
+
+<div class="archive-list-container">
+    
+        <section class="archive-item mb-spacing-unit last:mb-0">
+            <div class="archive-item-header flex flex-row items-center mb-2">
+                <span class="archive-year font-semibold text-3xl mr-2">2024</span>
+                <span class="archive-year-post-count text-xs md:text-sm font-bold rounded-small bg-third-background-color py-[2px] px-[10px] border border-border-color">1</span>
+            </div>
+            <ul class="article-list pl-0 md:pl-8 text-lg leading-[1.5]">
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='02-20'>
+                
+                    
+                        <a href="/2024/02/20/%E5%90%BE%E7%88%B1%E7%A0%B4%E8%A7%A3%202024%20%E6%98%A5%E8%8A%82%E8%A7%A3%E9%A2%98%E9%A2%86%E7%BA%A2%E5%8C%85%E4%B9%8B%20Web%20%E9%A2%98%E8%A7%A3/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">吾爱破解 2024 春节解题领红包之 Web 题解</span>
+                        </a>
+                    
+              
+            </ul>
+        </section>
+    
+        <section class="archive-item mb-spacing-unit last:mb-0">
+            <div class="archive-item-header flex flex-row items-center mb-2">
+                <span class="archive-year font-semibold text-3xl mr-2">2023</span>
+                <span class="archive-year-post-count text-xs md:text-sm font-bold rounded-small bg-third-background-color py-[2px] px-[10px] border border-border-color">2</span>
+            </div>
+            <ul class="article-list pl-0 md:pl-8 text-lg leading-[1.5]">
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='03-04'>
+                
+                    
+                        <a href="/2023/03/04/2023%E6%98%A5%E5%AD%A3%E8%B5%9B%E5%9C%BA%E5%A4%96%E6%B8%B8%E8%AE%B0/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">2023春季赛场外口胡记</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='02-23'>
+                
+                    
+                        <a href="/2023/02/23/%E3%80%90Python%E3%80%91%E4%BB%8E%E5%8D%9A%E5%AE%A2%E5%9B%AD%E6%90%AC%E5%AE%B6/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">如何快速从博客园搬家.py</span>
+                        </a>
+                    
+              
+            </ul>
+        </section>
+    
+        <section class="archive-item mb-spacing-unit last:mb-0">
+            <div class="archive-item-header flex flex-row items-center mb-2">
+                <span class="archive-year font-semibold text-3xl mr-2">2022</span>
+                <span class="archive-year-post-count text-xs md:text-sm font-bold rounded-small bg-third-background-color py-[2px] px-[10px] border border-border-color">78</span>
+            </div>
+            <ul class="article-list pl-0 md:pl-8 text-lg leading-[1.5]">
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='11-23'>
+                
+                    
+                        <a href="/2022/11/23/%E3%80%90%E9%A2%98%E8%A7%A3%E3%80%91P1891%20%E7%96%AF%E7%8B%82%20LCM/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">【题解】P1891 疯狂 LCM</span>
+                        </a>
+                    
+              
+                
+                    
+                        <a href="/2022/11/23/%E3%80%90%E9%A2%98%E8%A7%A3%E3%80%91P2303%20%20Longge%20%E7%9A%84%E9%97%AE%E9%A2%98/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">【题解】P2303 [SDOI2012] Longge 的问题</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='10-29'>
+                
+                    
+                        <a href="/2022/10/29/CSP2022%20-%20S2%20%E6%B8%B8%E8%AE%B0/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">CSP2022 - S2 游记</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='09-20'>
+                
+                    
+                        <a href="/2022/09/20/220920%20%E6%80%BB%E7%BB%93/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">220920 总结</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='09-18'>
+                
+                    
+                        <a href="/2022/09/18/2022%20CSP-S%20%E6%B8%B8%E8%AE%B0/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">2022 CSP-S 游记</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='09-13'>
+                
+                    
+                        <a href="/2022/09/13/220913%20%E6%80%BB%E7%BB%93/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">220913 总结</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='09-09'>
+                
+                    
+                        <a href="/2022/09/09/220908%20%E6%80%BB%E7%BB%93/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">220908 总结</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='09-06'>
+                
+                    
+                        <a href="/2022/09/06/220906%20%E6%80%BB%E7%BB%93/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">220906 总结</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='08-22'>
+                
+                    
+                        <a href="/2022/08/22/%E3%80%90%E6%A8%A1%E6%9D%BF%E3%80%91%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">【模板】树状数组</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='08-14'>
+                
+                    
+                        <a href="/2022/08/14/%E3%80%90%E9%A2%98%E8%A7%A3%E3%80%91CF1712C%20Sort%20Zero/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">【题解】CF1712C Sort Zero</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='08-08'>
+                
+                    
+                        <a href="/2022/08/08/%E3%80%90%E6%A8%A1%E6%9D%BF%E3%80%91%E5%8F%AF%E6%8C%81%E4%B9%85%E5%8C%96%E7%BA%BF%E6%AE%B5%E6%A0%91/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">【模板】可持久化线段树</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='08-03'>
+                
+                    
+                        <a href="/2022/08/03/220803%20%E6%80%BB%E7%BB%93/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">220803 总结</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='08-02'>
+                
+                    
+                        <a href="/2022/08/02/%E3%80%90%E9%A2%98%E8%A7%A3%E3%80%91CF1714G%20Path%20Prefixes/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">【题解】CF1714G Path Prefixes</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='07-29'>
+                
+                    
+                        <a href="/2022/07/29/%E5%8D%9A%E5%BC%88%E8%AE%BA/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">博弈论</span>
+                        </a>
+                    
+              
+                
+                    
+                        <a href="/2022/07/29/%E3%80%90%E6%A8%A1%E6%9D%BF%E3%80%91%E9%AB%98%E6%96%AF%E6%B6%88%E5%85%83%E6%B3%95/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">【模板】高斯消元法</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='07-27'>
+                
+                    
+                        <a href="/2022/07/27/220727%20%E6%80%BB%E7%BB%93/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">220727 总结</span>
+                        </a>
+                    
+              
+                
+                    
+                        <a href="/2022/07/27/%E6%9C%9F%E6%9C%9B/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">期望</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='07-26'>
+                
+                    
+                        <a href="/2022/07/26/220726%E6%80%BB%E7%BB%93/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">220726总结</span>
+                        </a>
+                    
+              
+                
+                    
+                        <a href="/2022/07/26/%E7%BB%84%E5%90%88%E6%95%B0/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">组合数</span>
+                        </a>
+                    
+              
+                
+                    
+                        <a href="/2022/07/26/%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">欧拉函数</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='07-25'>
+                
+                    
+                        <a href="/2022/07/25/%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">中国剩余定理</span>
+                        </a>
+                    
+              
+                
+                    
+                        <a href="/2022/07/25/%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">乘法逆元</span>
+                        </a>
+                    
+              
+                
+                    
+                        <a href="/2022/07/25/%E3%80%90%E6%A8%A1%E6%9D%BF%E3%80%91%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">【模板】扩展欧几里得算法</span>
+                        </a>
+                    
+              
+                
+                    
+                        <a href="/2022/07/25/%E3%80%90%E6%A8%A1%E6%9D%BF%E3%80%91%E7%BA%BF%E6%80%A7%E7%AD%9B/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">【模板】线性筛</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='07-19'>
+                
+                    
+                        <a href="/2022/07/19/%E3%80%90%E9%A2%98%E8%A7%A3%E3%80%91CF1706B%20Making%20Towers/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">【题解】CF1706B Making Towers</span>
+                        </a>
+                    
+              
+                
+                    
+                        <a href="/2022/07/19/%E3%80%90%E9%A2%98%E8%A7%A3%E3%80%91CF1706C%20Qpwoeirut%20And%20The%20City/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">【题解】CF1706C Qpwoeirut And The City</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='07-02'>
+                
+                    
+                        <a href="/2022/07/02/%E3%80%90%E9%A2%98%E8%A7%A3%E3%80%91CF1698C%203SUM%20Closure/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">【题解】CF1698C 3SUM Closure</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='06-30'>
+                
+                    
+                        <a href="/2022/06/30/%E3%80%90%E9%A2%98%E8%A7%A3%E3%80%91CF1698B%20Rising%20Sand/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">【题解】CF1698B Rising Sand</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='06-26'>
+                
+                    
+                        <a href="/2022/06/26/%E3%80%90%E9%A2%98%E8%A7%A3%E3%80%91CF1696B%20NIT%20Destroys%20the%20Universe/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">【题解】CF1696B NIT Destroys the Universe</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='06-16'>
+                
+                    
+                        <a href="/2022/06/16/%E3%80%90%E6%A8%A1%E6%9D%BF%E3%80%91%20Floyd,%20Dijkstra,%20SPFA/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">【模板】 Floyd, Dijkstra, SPFA</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='06-05'>
+                
+                    
+                        <a href="/2022/06/05/%E3%80%90%E6%A8%A1%E6%9D%BF%E3%80%91%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D%20-%20%E5%8C%88%E7%89%99%E5%88%A9%E7%AE%97%E6%B3%95/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">【模板】二分图最大匹配 - 匈牙利算法</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='06-03'>
+                
+                    
+                        <a href="/2022/06/03/%E3%80%90%E9%A2%98%E8%A7%A3%E3%80%91%E5%91%A8%E6%9C%9F%E9%95%BF%E5%BA%A6%E5%92%8C/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">【题解】周期长度和</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='05-29'>
+                
+                    
+                        <a href="/2022/05/29/220529%20%E6%80%BB%E7%BB%93/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">220529 总结</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='05-14'>
+                
+                    
+                        <a href="/2022/05/14/220512%E6%80%BB%E7%BB%93/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">220512总结</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='05-11'>
+                
+                    
+                        <a href="/2022/05/11/220510%E6%80%BB%E7%BB%93/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">220510总结</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='05-05'>
+                
+                    
+                        <a href="/2022/05/05/P3952%20%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">P3952 时间复杂度</span>
+                        </a>
+                    
+              
+                
+                    
+                        <a href="/2022/05/05/P3956%20%E6%A3%8B%E7%9B%98/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">P3956 棋盘</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='04-26'>
+                
+                    
+                        <a href="/2022/04/26/220426%E6%80%BB%E7%BB%93/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">220426总结</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='04-24'>
+                
+                    
+                        <a href="/2022/04/24/220421%E6%80%BB%E7%BB%93/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">220421总结</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='04-22'>
+                
+                    
+                        <a href="/2022/04/22/%E3%80%90%E9%A2%98%E8%A7%A3%E3%80%91UVA10559%20%E6%96%B9%E5%9D%97%E6%B6%88%E9%99%A4%20Blocks/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">【题解】UVA10559 方块消除 Blocks</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='04-17'>
+                
+                    
+                        <a href="/2022/04/17/220417%E6%80%BB%E7%BB%93/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">220417总结</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='04-13'>
+                
+                    
+                        <a href="/2022/04/13/%E3%80%90%E9%A2%98%E8%A7%A3%E3%80%91%E8%BF%87%E5%AE%B6%E5%AE%B6%EF%BC%88%E6%97%A0%E4%BB%A3%E7%A0%81/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">【题解】过家家（无代码</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='04-10'>
+                
+                    
+                        <a href="/2022/04/10/220410%E6%80%BB%E7%BB%93/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">220410总结</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='04-06'>
+                
+                    
+                        <a href="/2022/04/06/220405%E6%80%BB%E7%BB%93/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">220405总结</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='04-03'>
+                
+                    
+                        <a href="/2022/04/03/220403%E6%80%BB%E7%BB%93/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">220403总结</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='03-28'>
+                
+                    
+                        <a href="/2022/03/28/%E3%80%90%E9%A2%98%E8%A7%A3%E3%80%91P1038%20%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">【题解】P1038 神经网络</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='03-24'>
+                
+                    
+                        <a href="/2022/03/24/220324%E6%80%BB%E7%BB%93%EF%BC%88%E6%9A%82%E6%97%A0%E9%A2%98%E8%A7%A3/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">220324总结（暂无题解</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='03-18'>
+                
+                    
+                        <a href="/2022/03/18/220317%E6%80%BB%E7%BB%93/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">220317总结</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='03-14'>
+                
+                    
+                        <a href="/2022/03/14/%E3%80%90Codeforces%E3%80%91A.%20Artistic%20Swimming/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">【Codeforces】A. Artistic Swimming</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='03-08'>
+                
+                    
+                        <a href="/2022/03/08/220306%E6%80%BB%E7%BB%93%EF%BC%88%E9%83%A8%E5%88%86/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">220306总结（部分</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='03-03'>
+                
+                    
+                        <a href="/2022/03/03/%E3%80%90YbtOJ%E3%80%91%E5%8D%95%E8%AF%8D%E6%9B%BF%E6%8D%A2/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">【YbtOJ】单词替换</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='02-24'>
+                
+                    
+                        <a href="/2022/02/24/220222%E6%80%BB%E7%BB%93/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">220222总结</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='02-21'>
+                
+                    
+                        <a href="/2022/02/21/%E3%80%90YbtOJ%E3%80%91%E7%94%9F%E6%97%A5%E8%9B%8B%E7%B3%95/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">【YbtOJ】生日蛋糕</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='02-18'>
+                
+                    
+                        <a href="/2022/02/18/%E3%80%90YbtOJ%E3%80%91%E6%9C%80%E5%A4%A7%E5%9D%87%E5%80%BC/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">【YbtOJ】最大均值</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='02-15'>
+                
+                    
+                        <a href="/2022/02/15/%E7%BA%BF%E6%AE%B5%E6%A0%91/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">线段树</span>
+                        </a>
+                    
+              
+                
+                    
+                        <a href="/2022/02/15/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">树状数组</span>
+                        </a>
+                    
+              
+                
+                    
+                        <a href="/2022/02/15/ST%E8%A1%A8/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">ST表</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='02-14'>
+                
+                    
+                        <a href="/2022/02/14/%E6%A0%91%E4%B8%8A%E7%AE%97%E6%B3%95/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">树上算法</span>
+                        </a>
+                    
+              
+                
+                    
+                        <a href="/2022/02/14/tarjan/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">tarjan</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='02-12'>
+                
+                    
+                        <a href="/2022/02/12/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91-Kruskal/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">最小生成树-Kruskal</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='02-11'>
+                
+                    
+                        <a href="/2022/02/11/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">拓扑排序</span>
+                        </a>
+                    
+              
+                
+                    
+                        <a href="/2022/02/11/%E5%B9%B6%E6%9F%A5%E9%9B%86/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">并查集</span>
+                        </a>
+                    
+              
+                
+                    
+                        <a href="/2022/02/11/%E6%9C%80%E7%9F%AD%E8%B7%AF%E7%AE%97%E6%B3%95/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">最短路算法</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='02-10'>
+                
+                    
+                        <a href="/2022/02/10/%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97%EF%BC%88LIS%EF%BC%89/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">最长上升子序列（LIS）</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='02-09'>
+                
+                    
+                        <a href="/2022/02/09/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">背包问题</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='01-30'>
+                
+                    
+                        <a href="/2022/01/30/%E6%97%A0%E9%99%90%E5%BA%8F%E5%88%97/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">无限序列</span>
+                        </a>
+                    
+              
+                
+                    
+                        <a href="/2022/01/30/%E6%95%B0%E7%9A%84%E5%88%92%E5%88%86&amp;%E4%BC%A0%E7%90%83%E6%B8%B8%E6%88%8F/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">数的划分&amp;amp;传球游戏</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='01-28'>
+                
+                    
+                        <a href="/2022/01/28/220128%E6%80%BB%E7%BB%93/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">220128总结</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='01-27'>
+                
+                    
+                        <a href="/2022/01/27/220127%E6%80%BB%E7%BB%93/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">220127总结</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='01-26'>
+                
+                    
+                        <a href="/2022/01/26/220126%E6%80%BB%E7%BB%93/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">220126总结</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='01-25'>
+                
+                    
+                        <a href="/2022/01/25/220125%E6%80%BB%E7%BB%93/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">220125总结</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='01-24'>
+                
+                    
+                        <a href="/2022/01/24/220124%E6%80%BB%E7%BB%93/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">220124总结</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='01-23'>
+                
+                    
+                        <a href="/2022/01/23/220123%E6%80%BB%E7%BB%93/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">220123总结</span>
+                        </a>
+                    
+              
+                
+                    
+                        <a href="/2022/01/23/%E5%9B%9E%E6%BA%AF%E4%B8%8E%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2(DFS)/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">回溯与深度优先搜索(DFS)</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='01-22'>
+                
+                    
+                        <a href="/2022/01/22/%E3%80%90%E6%A8%A1%E6%9D%BF%E3%80%91%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">【模板】矩阵快速幂</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='01-16'>
+                
+                    
+                        <a href="/2022/01/16/%E7%AC%AC%E4%BA%8C%E7%B1%BBStirling%E6%95%B0/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">第二类Stirling数</span>
+                        </a>
+                    
+              
+                
+                    
+                        <a href="/2022/01/16/%E5%BF%AB%E9%80%9F%E5%B9%82/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">快速幂</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='01-15'>
+                
+                    
+                        <a href="/2022/01/15/%E5%8D%A1%E7%89%B9%E5%85%B0%E6%95%B0/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">卡特兰数</span>
+                        </a>
+                    
+              
+            </ul>
+        </section>
+    
+        <section class="archive-item mb-spacing-unit last:mb-0">
+            <div class="archive-item-header flex flex-row items-center mb-2">
+                <span class="archive-year font-semibold text-3xl mr-2">2021</span>
+                <span class="archive-year-post-count text-xs md:text-sm font-bold rounded-small bg-third-background-color py-[2px] px-[10px] border border-border-color">6</span>
+            </div>
+            <ul class="article-list pl-0 md:pl-8 text-lg leading-[1.5]">
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='12-12'>
+                
+                    
+                        <a href="/2021/12/12/%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%80%BB%E7%BB%93%EF%BC%8821.12.11%EF%BC%89/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">模拟赛总结（21.12.11）</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='12-05'>
+                
+                    
+                        <a href="/2021/12/05/%E5%85%A8%E6%8E%92%E5%88%97/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">全排列</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='12-02'>
+                
+                    
+                        <a href="/2021/12/02/%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%80%BB%E7%BB%93%EF%BC%8821.12.02%EF%BC%89/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">模拟赛总结（21.12.02）</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='11-29'>
+                
+                    
+                        <a href="/2021/11/29/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%EF%BC%88%E5%8A%A0%E5%BC%BA%E7%89%88/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">斐波那契数列（加强版</span>
+                        </a>
+                    
+              
+                
+                    
+                        <a href="/2021/11/29/%E6%BB%9A%E5%8A%A8%E6%95%B0%E7%BB%84/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">滚动数组</span>
+                        </a>
+                    
+              
+                
+                    
+                    <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='11-28'>
+                
+                    
+                        <a href="/2021/11/28/%E9%98%B6%E6%AE%B5%E6%80%A7%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89/" class="block overflow-hidden w-fit">
+                            <span class="article-title mb-0.5 text-2xl">阶段性总结（一）</span>
+                        </a>
+                    
+              
+            </ul>
+        </section>
+    
+</div>
+
+</div>
+
+                
+
+            </div>
+
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2024&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">Burnling</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        87 posts in total
+                    </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">VISITOR COUNT</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">TOTAL PAGE VIEWS</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.6.1</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+    
+<script src="/js/libs/Swup.min.js"></script>
+
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+
+
+
+<script src="/js/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/utils.js" type="module"></script>
+
+<script src="/js/main.js" type="module"></script>
+
+<script src="/js/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/layouts/categoryList.js" type="module"></script>
+
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+<div class="post-scripts" data-swup-reload-script>
+    
+        
+<script src="/js/tools/tocToggle.js" type="module"></script>
+
+<script src="/js/layouts/toc.js" type="module"></script>
+
+<script src="/js/plugins/tabs.js" type="module"></script>
+
+    
+</div>
+
+
+</body>
+</html>
